@@ -1,8 +1,9 @@
 package triggerbot
 
 import (
+	"ask8ball/pkg/lib"
 	"strings"
-	"nyanbot"
+
 	"github.com/nlopes/slack"
 )
 
@@ -38,7 +39,7 @@ func (b *Triggerbot) HandleMessage(api *slack.Client, rtm *slack.RTM, ev *slack.
 	isKeyword := false
 	for _, keyword := range b.config.Keywords {
 		if strings.Contains(text, keyword) {
-			sampleText = nyanbot.PickOne(b.config.Phrases)
+			sampleText = lib.PickOne(b.config.Phrases)
 			isKeyword = true
 			break
 		}
@@ -55,9 +56,9 @@ func (b *Triggerbot) HandleMessage(api *slack.Client, rtm *slack.RTM, ev *slack.
 		return nil
 	}
 
-	iconURL := nyanbot.PickOne(b.config.IconURLs)
+	iconURL := lib.PickOne(b.config.IconURLs)
 
-	_, _, err := nyanbot.SendMessageAs(rtm, nyanbot.Message{
+	_, _, err := lib.SendMessageAs(rtm, lib.Message{
 		Text:     sampleText,
 		Username: b.config.Username,
 		IconURL:  iconURL,

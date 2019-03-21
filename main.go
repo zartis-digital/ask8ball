@@ -1,13 +1,15 @@
 package main
 
 import (
-	"../../personas"
-	"../../triggerbot"
 	"fmt"
-	"github.com/nlopes/slack"
 	"log"
-	"nyanbot"
 	"os"
+
+	"github.com/nlopes/slack"
+
+	"ask8ball/pkg/lib"
+	"ask8ball/pkg/personas"
+	"ask8ball/pkg/triggerbot"
 )
 
 var (
@@ -21,14 +23,14 @@ var (
 )
 
 func main() {
-	token := os.Getenv("NYANBOT_TOKEN")
+	token := os.Getenv("SLACK_TOKEN")
 	if len(token) == 0 {
-		log.Fatalln("NYANBOT_TOKEN env var is required!")
+		log.Fatalln("SLACK_TOKEN env var is required!")
 	} else {
 		log.Print(token)
 	}
 
-	plugins := []nyanbot.Plugin{
+	plugins := []lib.Plugin{
 		triggerbot.New(ask8ballConfiguration),
 	}
 
@@ -57,13 +59,13 @@ func main() {
 			log.Printf("Connected! ConnectionCount=%d", ev.ConnectionCount)
 		case *slack.MessageEvent:
 			// log.Printf("Message: %+v\n", ev)
-			if ev.Msg.Text == "stop-nyanbot" {
+			if ev.Msg.Text == "stop-ask8ball" {
 				os.Exit(1)
 			}
 
 			isInAllowedChannels := allowedChannels[ev.Channel]
 			if !isInAllowedChannels {
-				log.Printf("Channel not allowed %s %+v", ev.Channel, ev);
+				log.Printf("Channel not allowed %s %+v", ev.Channel, ev)
 				continue
 			}
 
@@ -72,7 +74,7 @@ func main() {
 					continue
 				}
 				err := plugin.HandleMessage(api, rtm, ev)
-				if err == nyanbot.ErrStop {
+				if err == lib.ErrStop {
 					break
 				}
 				if err != nil {
@@ -109,8 +111,8 @@ func parseGroups(api *slack.Client) (map[string]bool, error) {
 		}
 	}
 
-	allowed["GGYT2NJA1"] = true;
-	allowed["CGYT18RMK"] = true;
+	allowed["GGYT2NJA1"] = true
+	allowed["CGYT18RMK"] = true
 
 	return allowed, nil
 }

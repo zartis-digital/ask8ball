@@ -2,20 +2,35 @@
 
 
 [[projects]]
-  name = "github.com/nlopes/slack"
+  digest = "1:09aa5dd1332b93c96bde671bafb053249dc813febf7d5ca84e8f382ba255d67d"
+  name = "github.com/gorilla/websocket"
   packages = ["."]
-  revision = "c86337c0ef2486a15edd804355d9c73d2f2caed1"
-  version = "v0.1.0"
+  pruneopts = ""
+  revision = "66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d"
+  version = "v1.4.0"
 
 [[projects]]
-  branch = "master"
-  name = "golang.org/x/net"
-  packages = ["websocket"]
-  revision = "894f8ed5849b15b810ae41e9590a0d05395bba27"
+  digest = "1:1b1773f5ba8e6ab6a63c5a5a16dee3dd1035f70b61e715666c3ff0be705ee8ab"
+  name = "github.com/nlopes/slack"
+  packages = [
+    ".",
+    "slackutilsx",
+  ]
+  pruneopts = ""
+  revision = "a7deeca7935c178aa865249bab511daf816288ba"
+  version = "v0.5.0"
+
+[[projects]]
+  digest = "1:1d7e1867c49a6dd9856598ef7c3123604ea3daabf5b83f303ff457bcbc410b1d"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = ""
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "767459673912128892742f6cf44fb3e6f7220359753c15b93e5de065d7546dd7"
+  input-imports = ["github.com/nlopes/slack"]
   solver-name = "gps-cdcl"
   solver-version = 1
