@@ -1,0 +1,9 @@
+# Generated with vcli (0.20.2.0)
+version: '3.7'
+
+services:
+  ask8ball:
+    image: ask8ball:0.1
+    environment:
+      - SLACK_TOKEN=
+      

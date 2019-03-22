@@ -1,9 +1,6 @@
 package personas
 
-import "math/rand"
-
 var Ask8BallKeywords = []string{
-	"b8t",
 	"ask8ball",
 	"a8b",
 }
@@ -74,5 +71,4 @@ var Ask8BallPhrases = []string{
 	"If you ask me, I would say yes, but this time my friend, I am going to just say no.",
 }
 
- var Ask8BallReactions = map[string]func() string{
- };
+var Ask8BallReactions = map[string]func() string{}

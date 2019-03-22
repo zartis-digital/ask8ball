@@ -1,10 +1,11 @@
-package nyanbot
+package lib
 
 import (
 	"errors"
-	"time"
-	"github.com/nlopes/slack"
 	"math/rand"
+	"time"
+
+	"github.com/nlopes/slack"
 )
 
 var ErrStop = errors.New("stop")
@@ -32,11 +33,11 @@ func SendMessageAs(rtm *slack.RTM, msg Message) (channelID, timestamp string, er
 		IconURL:  msg.IconURL,
 	}
 
-	time.Sleep(time.Second * time.Duration(rand.Intn(5)));
+	time.Sleep(time.Second * time.Duration(rand.Intn(5)))
 	return rtm.PostMessage(msg.Channel,
 		slack.MsgOptionText(msg.Text, false),
 		slack.MsgOptionAsUser(false),
 		slack.MsgOptionParse(true),
 		slack.MsgOptionEnableLinkUnfurl(),
-		slack.MsgOptionPostMessageParameters(postParams));
+		slack.MsgOptionPostMessageParameters(postParams))
 }
