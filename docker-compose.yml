@@ -4,6 +4,7 @@ version: '3.7'
 services:
   ask8ball:
     image: ask8ball:0.1
+    restart: always
     environment:
       - SLACK_TOKEN=
       
