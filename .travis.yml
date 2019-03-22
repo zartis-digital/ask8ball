@@ -6,6 +6,7 @@ before_install:
 - docker pull alpine:3.9.2
 
 script:
+  - export REPO=zartisdigital/ask8ball
   - ./ci/build.sh $REPO $COMMIT $TRAVIS_BRANCH $TRAVIS_BUILD_NUMBER
 
 after_success:
