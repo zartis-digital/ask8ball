@@ -7,13 +7,13 @@ before_install:
 
 script:
   - export REPO=zartisdigital/ask8ball
-  - export COMMIT=$COMMIT
+  - export COMMIT=$TRAVIS_COMMIT
   - ./ci/build.sh
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - export REPO=zartisdigital/ask8ball
-  - export COMMIT=$COMMIT
+  - export COMMIT=$TRAVIS_COMMIT
   - export TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
   - export TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
   - export TRAVIS_TAG=$TRAVIS_TAG
