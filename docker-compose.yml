@@ -3,7 +3,8 @@ version: '3.7'
 
 services:
   ask8ball:
-    image: ask8ball:0.1
+    image: zartisdigital/ask8ball:latest
+    restart: always
     environment:
       - SLACK_TOKEN=
       

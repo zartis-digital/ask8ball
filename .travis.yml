@@ -1,0 +1,21 @@
+services:
+  - docker
+
+before_install:
+- docker pull golang:1.12.1
+- docker pull alpine:3.9.2
+
+script:
+  - export REPO=zartisdigital/ask8ball
+  - export COMMIT=$TRAVIS_COMMIT
+  - ./ci/build.sh
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - export REPO=zartisdigital/ask8ball
+  - export COMMIT=$TRAVIS_COMMIT
+  - export TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+  - export TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+  - export TRAVIS_TAG=$TRAVIS_TAG
+  - export TRAVIS_BRANCH=$TRAVIS_BRANCH
+  - ./ci/publish.sh
