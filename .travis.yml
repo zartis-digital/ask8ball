@@ -7,9 +7,9 @@ before_install:
 
 script:
   - export REPO=zartisdigital/ask8ball
-  - ./ci/build.sh $REPO $COMMIT $TRAVIS_BRANCH $TRAVIS_BUILD_NUMBER
+  - ./ci/build.sh
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - export REPO=zartisdigital/ask8ball
-  - ./ci/publish.sh $REPO $COMMIT $TRAVIS_BRANCH $TRAVIS_BUILD_NUMBER
+  - ./ci/publish.sh
