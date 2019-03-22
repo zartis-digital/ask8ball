@@ -1,7 +1,6 @@
 ######## Build image #######
 FROM golang:1.12.1 as builder
 RUN go get -u github.com/golang/dep/cmd/dep
-RUN go get -u github.com/nlopes/slack
 LABEL version="0.1"
 ADD . /go/src/ask8ball
 WORKDIR /go/src/ask8ball
