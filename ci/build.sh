@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGE="$REPO:$1"
+IMAGE="$REPO:$COMMIT"
 
 echo "Building docker: $IMAGE"
 docker build -f Dockerfile -t $IMAGE .
