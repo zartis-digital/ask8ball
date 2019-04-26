@@ -113,6 +113,7 @@ func parseGroups(api *slack.Client) (map[string]bool, error) {
 
 	allowed["GGYT2NJA1"] = true
 	allowed["CGYT18RMK"] = true
+	allowed["CJ87H4NNA"] = true
 
 	return allowed, nil
 }
