@@ -119,6 +119,10 @@ var Ask8BallPhrases = []string{
 	":8ball: :eggplant: :banana: :hotdog: :burrito: :baguette_bread: :champagne:",
 	":8ball: This will be the result -> :bigerror:",
 	":8ball: If you ask me, I would say yes, but this time my friend, I am going to just say no.",
+	":8ball: Disculpen si les llamo caballeros, pero es que no les conozco muy bien",
+	":8ball: El secreto de la vida es la honestidad y el juego limpio, si puedes simular eso, lo has conseguido",
+	":8ball: Es mejor estar callado y parecer tonto, que hablar y despejar las dudas definitivamente",
+	":8ball: No puedo decir que no estoy en desacuerdo contigo",
 }
 
 var Ask8BallReactions = map[string]func() string{}
