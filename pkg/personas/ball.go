@@ -1,5 +1,9 @@
 package personas
 
+import (
+    "strings"
+)
+
 var Ask8BallKeywords = []string{
 	"ask8ball",
 	"a8b",
@@ -125,4 +129,8 @@ var Ask8BallPhrases = []string{
 	":8ball: No puedo decir que no estoy en desacuerdo contigo",
 }
 
-var Ask8BallReactions = map[string]func() string{}
+var Ask8BallReactions = map[string]func(string) string{
+    "ballreact": func(msg string) string {
+		return strings.Replace(msg, "ballreact ", "", 1)
+	},
+}

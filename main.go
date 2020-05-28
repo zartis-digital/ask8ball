@@ -66,7 +66,7 @@ func main() {
 			isInAllowedChannels := allowedChannels[ev.Channel]
 			if !isInAllowedChannels {
 				log.Printf("Channel not allowed %s %+v", ev.Channel, ev)
-				continue
+				// continue
 			}
 
 			for _, plugin := range plugins {

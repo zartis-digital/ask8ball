@@ -13,7 +13,7 @@ type Configuration struct {
 	Keywords  []string
 	IconURLs  []string
 	Phrases   []string
-	Reactions map[string]func() string
+	Reactions map[string]func(string) string
 	OnUpload  bool
 }
 
@@ -46,7 +46,7 @@ func (b *Triggerbot) HandleMessage(api *slack.Client, rtm *slack.RTM, ev *slack.
 	}
 	for keyword, reactionFn := range b.config.Reactions {
 		if strings.Contains(text, keyword) {
-			sampleText = reactionFn()
+			sampleText = reactionFn(text)
 			isKeyword = true
 			break
 		}
