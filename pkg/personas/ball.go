@@ -70,7 +70,7 @@ var Ask8BallPhrases = []string{
 	":vamonoh:",
 	"No way",
 	"Most likely",
-	"Absolutely YES!",g
+	"Absolutely YES!",
 	"The future seems uncertain",
 	"There might be a chance",
 	"It is risky, but I would go for it",
