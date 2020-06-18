@@ -3,6 +3,8 @@ version: '3.7'
 
 services:
   ask8ball:
+    build:
+      context: .
     image: zartisdigital/ask8ball:latest
     restart: always
     environment:
