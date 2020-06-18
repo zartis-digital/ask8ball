@@ -13,6 +13,8 @@ var ErrStop = errors.New("stop")
 type Plugin interface {
 	Name() string
 	HandleMessage(api *slack.Client, rtm *slack.RTM, ev *slack.MessageEvent) error
+	RandomMessage(api *slack.Client, rtm *slack.RTM) error
+	WelcomeMessage(api *slack.Client, rtm *slack.RTM, user string, channel string) error
 }
 
 func PickOne(list []string) string {

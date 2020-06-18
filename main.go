@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 
 	"github.com/nlopes/slack"
@@ -17,6 +18,7 @@ var (
 		Username:  "Ask8Ball",
 		Keywords:  personas.Ask8BallKeywords,
 		IconURLs:  personas.Ask8BallIconURLs,
+		HelloPhrases: personas.Ask8BallHelloPhrases,
 		Phrases:   personas.Ask8BallPhrases,
 		Reactions: personas.Ask8BallReactions,
 	}
@@ -52,7 +54,27 @@ func main() {
 		case *slack.RTMError:
 			log.Printf("Error: %s\n", ev.Error())
 		case *slack.HelloEvent:
-			// Ignore
+			for _, plugin := range plugins {
+				if rand.Intn(5) > 3 {
+					err := plugin.RandomMessage(api, rtm)
+					if err == lib.ErrStop {
+						break
+					}
+					if err != nil {
+						log.Println("MessageEvent", plugin.Name(), err)
+					}
+				}
+			}
+		case *slack.MemberJoinedChannelEvent:
+			for _, plugin := range plugins {
+				err := plugin.WelcomeMessage(api, rtm, ev.User, ev.Channel)
+				if err == lib.ErrStop {
+					break
+				}
+				if err != nil {
+					log.Println("MessageEvent", plugin.Name(), err)
+				}
+			}
 		case *slack.ConnectingEvent:
 			// Can't use api.SetUserCustomStatus for bots :(
 		case *slack.ConnectedEvent:
@@ -103,12 +125,9 @@ func parseGroups(api *slack.Client) (map[string]bool, error) {
 
 	allowed := make(map[string]bool)
 	for _, group := range groups {
-		if group.Name == "ask8ball" || group.Name == "ask8ball-testing" {
-			fmt.Printf("Allowed! ID=%q Name=%q\n", group.ID, group.Name)
-			allowed[group.ID] = true
-		} else {
-			fmt.Printf("NotAllowed! ID=%q Name=%q\n", group.ID, group.Name)
-		}
+		fmt.Printf("Allowed! ID=%q Name=%q\n", group.ID, group.Name)
+		allowed[group.ID] = true
+		allowed[group.Name] = true
 	}
 
 	allowed["GGYT2NJA1"] = true
