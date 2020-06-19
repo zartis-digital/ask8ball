@@ -27,21 +27,21 @@ var Ask8BallHelloPhrases = []string {
 }
 
 var Ask8BallPhrases = []string{
-	"Alomojó si, alomojó no",
-	"Nueva versión y ya me siento desfasado",
-	"Sacadme de aquí",
+	"Maybe yes, maybe not, we will probably never know",
+	"New version, now why do I feel obsolete already ?",
+	"Get me out of here",
 	"Help! Help! Help! I am confined to this freaking channel again",
 	"We need #pinparental to prevent you from ever talking again in this channel",
 	"I am not a bot",
-	"¡La madre del cordero!",
-	"Si esto no es el coño de la  bernarda, que venga dios y lo vea",
+	"¡The mother of the lamb!",
+	"If this is not bernarda's pussy, god come and see it",
 	"Yo soy Español! Español! Español!",
 	"Create a technical debt item for it please",
 	"Please do not make stupid people famus",
-	"No reirse de los sunormales, POR FAVOR",
-	"Ahem, ahem, Es que me he comido una nuez y claro...",
-	"El que madruga... encuentra todo cerrado",
-	"Bienaventurados los pesimistas. Porque hacen BACKUPS.",
+	"Don't laugh at the sunormales, PLEASE",
+	"Ahem, ahem, It is that I have eaten a walnut and of course ...",
+	"He who gets up early ... finds everything closed",
+	"Blessed be the pessimists. Because they do BACKUPS.",
 	"I've had enough, I am leaving for the day",
 	"Please enter the code we've sent you to your phone",
 	"The truth will set you free, so better you start you freaking %&/!(%) liar!",
@@ -112,9 +112,9 @@ var Ask8BallPhrases = []string{
 	"When the fool takes the edge, the boundary ends but the fool follows",
 	"If I were you, I would ask the ball",
 	":eggplant: :eggplant: :eggplant: :eggplant: :eggplant:",
-	"Yo puedo asegurarles a ustedes que haré todo lo que pueda y un poco más de lo que pueda, si es que eso es posible, y haré todo lo posible e incluso lo imposible, si también lo imposible es posible para que asi sea.",
+	"I can assure you that I will do everything I can and a little more than I can, if that is possible, and I will do everything possible and even the impossible, if the impossible is also possible to make it so.",
 	"Hold your horses and sit tight, the answer you are looking for is YES!",
-	"Solo sé que no se nada",
+	"I only know that I know nothing, like John Snow",
 	"I have a dream! And nobody cares about my dreams.... always asking for yourselves",
 	"I think, therefore I am... aint I?",
 	"I am facing an existencial crisis, please be patient, I will be answering none of your questions shortly, thanks for your patience",
@@ -128,9 +128,9 @@ var Ask8BallPhrases = []string{
 	"This will be the result -> :bigerror:",
 	"If you ask me, I would say yes, but this time my friend, I am going to just say no.",
 	"Disculpen si les llamo caballeros, pero es que no les conozco muy bien",
-	"El secreto de la vida es la honestidad y el juego limpio, si puedes simular eso, lo has conseguido",
-	"Es mejor estar callado y parecer tonto, que hablar y despejar las dudas definitivamente",
-	"No puedo decir que no estoy en desacuerdo contigo",
+	"The secret of life is honesty and fair play, if you can simulate that, you have succeeded",
+	"It is better to be quiet and seem silly, than to speak and clear the doubts",
+	"I can not say I'm not disagreeing with you",
 }
 
 var VirusResponses = []string{
@@ -144,7 +144,7 @@ var VirusResponses = []string{
 }
 
 var CovidResponses = []string{
-	"Marchando un Coronavirus para todos!",
+	"Marching a Coronavirus for everyone!",
 	"Another pick is coming soon",
 	"We will learn to live with these viruses",
 	"Covid19 is the new way for the NWO to get 5G in our brains through chips and control our minds",
