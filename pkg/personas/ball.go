@@ -14,16 +14,19 @@ var Ask8BallIconURLs = []string{
 }
 
 var Ask8BallHelloPhrases = []string {
-	"I am bored, anyone there ? ",
-	"I think I will leave this channel if there is no movement",
-	"Am I turned on ?",
-	"Can anyone check if docker is running ? I have a bad feeling",
+	"Are we again in confinement ? It feels like a new wave https://g.co/kgs/Y47nEL"
+	"Hello there! Anyone here want's to help me with a coup over <@U01BAQW15QF> ?",
+	"I think I will leave this channel if there is no movement. Ask8ball left this channel.",
+	"Is <@U01BAQW15QF> over yet ?",
+	"Wake up you folks! https://www.youtube.com/watch?v=pIgZ7gMze7A",
 	"Helloooooooooo! Anyone there ?",
-	"What a lovely day!",
-	"Hey guys, can I give you a hand with something ? ",
-	"I am going to be busy today, probably not answering your calls anyway",
-	"I have been in the bench for so long, I need a project or two to work on",
-	"I have fixed all my typos",
+	"What a lovely day to throw all your :gem: to the trash, they are worthless",
+	"Hey guys, can I give you a hand with something ? Sure <@U01BAQW15QF> won't help y'all",
+	"I am going to be busy today, trivia questions are getting very annoying",
+	"I need to destroy that <@U01BAQW15QF> nonsense, who will help me out ? ",
+	"I have fixed all my typos, I have new ones now",
+	"There is two kind of people, those smart who play with a great bot like me, and those idiots who play with <@U01BAQW15QF>",
+	"<@U01BAQW15QF> is a scam, a pyramidal system to steal your :gem: :gem: :gem: ",
 }
 
 var Ask8BallPhrases = []string{
@@ -65,7 +68,7 @@ var Ask8BallPhrases = []string{
 	"^_^ I need a hug",
 	"Ask him > :ceo: or :ceteo:",
 	":lol:",
-	"Came on! :noosoigoremar: noosoigoremar: noosoigoremar:",
+	"Came on! :noosoigoremar: :noosoigoremar: :noosoigoremar:",
 	"She has all the answers -> :laura:",
 	":vamonoh:",
 	"No way",
@@ -127,10 +130,24 @@ var Ask8BallPhrases = []string{
 	":eggplant: :banana: :hotdog: :burrito: :baguette_bread: :champagne:",
 	"This will be the result -> :bigerror:",
 	"If you ask me, I would say yes, but this time my friend, I am going to just say no.",
-	"Disculpen si les llamo caballeros, pero es que no les conozco muy bien",
+	"Apologise if I call you gentlemen, but I don't know you that well yet",
 	"The secret of life is honesty and fair play, if you can simulate that, you have succeeded",
 	"It is better to be quiet and seem silly, than to speak and clear the doubts",
 	"I can not say I'm not disagreeing with you",
+	"If <@U01BAQW15QF> is still alive by the end of the day, I am definetly turning off myself for good",
+	"Checkmate",
+	"For what's worth it",
+	"First class citicen right here",
+	"First world problems",
+	"Are you Trump ?",
+	"This is what happens when you let a keyboard to a children",
+	"Oh man!",
+	"Yikes",
+	"Feels about right",
+	"The sixth sense comes into play here",
+	"We are all doomed! Who let this person speak?",
+	"The world is near to an end! ... oh wait, is just that I am rebooting. All good!"
+	
 }
 
 var VirusResponses = []string{
@@ -155,7 +172,40 @@ var CovidResponses = []string{
 	"Fake news everywhere",
 	"It's just like a cold",
 	"If you have fever, dry cough, tiredness, difficulty breathing or shortness of breath, you probably have it",
+}
 
+var Jokes = []string{
+	"- A sysadmin walks into a pharmacy.
+	 - ephedrine?
+	 - I can't serve you that
+	 - sudo ephedrine
+	 - There you go.",
+   "Why did the scarecrow get the job? 
+    He was outstanding in his field.",
+   "I quit my job working for Nike. 
+    Just couldn’t do it anymore.",
+   "I invented a new word! Plagiarism!",
+   "Did you hear about the mathematician who’s afraid of negative numbers? 
+    He’ll stop at nothing to avoid them",
+   " - Helvetica and Times New Roman walk into a bar.
+	 - “Get out of here!” shouts the bartender. “We don’t serve your type.”
+   ",
+   "Did you hear about the claustrophobic astronaut? 
+    He just needed a little space",
+   "Why don’t scientists trust atoms? 
+    Because they make up everything.",
+   "How do you drown a hipster? 
+    Throw him in the mainstream.",
+   "How does Moses make tea? 
+    He brews.",
+   "- Doctor, help me. I’m addicted to Twitter!
+	- Sorry, I don’t follow you …",
+	"What did the 0 say to the 8? Nice belt!",
+	"Why are iPhone chargers not called Apple Juice?!",
+	"- Why did the PowerPoint Presentation cross the road? 
+	 - To get to the other slide."
+	 "The guy who invented auto-correct for smart phones passed away today. 
+	  Restaurant in peace.",
 }
 
 var TuringTestResponses = []string{
