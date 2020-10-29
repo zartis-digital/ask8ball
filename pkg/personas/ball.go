@@ -14,7 +14,7 @@ var Ask8BallIconURLs = []string{
 }
 
 var Ask8BallHelloPhrases = []string {
-	"Are we again in confinement ? It feels like a new wave https://g.co/kgs/Y47nEL"
+	"Are we again in confinement ? It feels like a new wave https://g.co/kgs/Y47nEL",
 	"Hello there! Anyone here want's to help me with a coup over <@U01BAQW15QF> ?",
 	"I think I will leave this channel if there is no movement. Ask8ball left this channel.",
 	"Is <@U01BAQW15QF> over yet ?",
@@ -146,8 +146,7 @@ var Ask8BallPhrases = []string{
 	"Feels about right",
 	"The sixth sense comes into play here",
 	"We are all doomed! Who let this person speak?",
-	"The world is near to an end! ... oh wait, is just that I am rebooting. All good!"
-	
+	"The world is near to an end! ... oh wait, is just that I am rebooting. All good!",
 }
 
 var VirusResponses = []string{
@@ -175,37 +174,45 @@ var CovidResponses = []string{
 }
 
 var Jokes = []string{
-	"- A sysadmin walks into a pharmacy.
+	`- A sysadmin walks into a pharmacy.
 	 - ephedrine?
 	 - I can't serve you that
 	 - sudo ephedrine
-	 - There you go.",
-   "Why did the scarecrow get the job? 
-    He was outstanding in his field.",
-   "I quit my job working for Nike. 
-    Just couldn’t do it anymore.",
-   "I invented a new word! Plagiarism!",
-   "Did you hear about the mathematician who’s afraid of negative numbers? 
-    He’ll stop at nothing to avoid them",
-   " - Helvetica and Times New Roman walk into a bar.
+	 - There you go.`,
+	 `Why did the scarecrow get the job? 
+    He was outstanding in his field.`,
+	`I quit my job working for Nike. 
+    Just couldn’t do it anymore.`,
+   `I invented a new word! Plagiarism!`,
+   `Did you hear about the mathematician who’s afraid of negative numbers? 
+    He’ll stop at nothing to avoid them`,
+   ` - Helvetica and Times New Roman walk into a bar.
 	 - “Get out of here!” shouts the bartender. “We don’t serve your type.”
-   ",
-   "Did you hear about the claustrophobic astronaut? 
-    He just needed a little space",
-   "Why don’t scientists trust atoms? 
-    Because they make up everything.",
-   "How do you drown a hipster? 
-    Throw him in the mainstream.",
-   "How does Moses make tea? 
-    He brews.",
-   "- Doctor, help me. I’m addicted to Twitter!
-	- Sorry, I don’t follow you …",
-	"What did the 0 say to the 8? Nice belt!",
-	"Why are iPhone chargers not called Apple Juice?!",
-	"- Why did the PowerPoint Presentation cross the road? 
-	 - To get to the other slide."
-	 "The guy who invented auto-correct for smart phones passed away today. 
-	  Restaurant in peace.",
+   `,
+   `Did you hear about the claustrophobic astronaut? 
+    He just needed a little space`,
+   `Why don’t scientists trust atoms? 
+    Because they make up everything.`,
+   `How do you drown a hipster? 
+    Throw him in the mainstream.`,
+   `How does Moses make tea? 
+    He brews.`,
+   `- Doctor, help me. I’m addicted to Twitter!
+	- Sorry, I don’t follow you …`,
+	`What did the 0 say to the 8? Nice belt!`,
+	`Why are iPhone chargers not called Apple Juice?!`,
+	`- Why did the PowerPoint Presentation cross the road? 
+	 - To get to the other slide.`,
+	 `The guy who invented auto-correct for smart phones passed away today. 
+	  Restaurant in peace.`,
+	`The closest I’ve been to a diet this year is erasing food searches from my browser history.`,
+	`I hate audio correct.`,
+	`Documentation is like sex.  
+	 When it's good, it's ver good.
+	 When it's bad, its better than nothing`,
+	 `I will leave relations to the databases`,
+	 `1/3 of US bandwidth is used by Netflix...
+	  the rest is used by "rm -rf node_modules && npm install"`,
 }
 
 var TuringTestResponses = []string{
@@ -233,6 +240,9 @@ func RespondTo(ev *slack.MessageEvent) string {
 }
 
 var Ask8BallReactions = map[string]func(ev *slack.MessageEvent) string{
+	"joke": func(ev *slack.MessageEvent) string {
+		return RespondTo(ev) + lib.PickOne(Jokes)
+	},
 	"covid": func(ev *slack.MessageEvent) string {
 		return RespondTo(ev) + lib.PickOne(CovidResponses)
 	},
