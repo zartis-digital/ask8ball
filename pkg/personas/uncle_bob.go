@@ -30,7 +30,7 @@ var UncleBobHelloPhrases = []string {
 	"Hello! I am joining Zartis for good",
 	"Try using a factory object",
 	"I do not believe business rules are described by that code",
-	"Your code smells, it is definetly not clean"
+	"Your code smells, it is definetly not clean",
 }
 
 var UncleBobPhrases = []string{
@@ -80,7 +80,7 @@ var UncleBobPhrases = []string{
      "Whatever else a TODO might be, it is not an excuse to leave bad code in the system.",
      "Lots of very funny code is written because people don’t take the time to understand the algorithm.",
      "Architecting for the enterprise, when all you really need is a cute little desktop tool, is a recipe for failure.",
-     "Code, without tests, is not clean. No matter how elegant it is, no matter how readable and accessible, if it hath not tests, it be unclean."
+     "Code, without tests, is not clean. No matter how elegant it is, no matter how readable and accessible, if it hath not tests, it be unclean.",
 }
 
 func RespondTo(ev *slack.MessageEvent) string {

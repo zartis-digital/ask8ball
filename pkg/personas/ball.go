@@ -149,5 +149,5 @@ func RespondTo(ev *slack.MessageEvent) string {
 var Ask8BallReactions = map[string]func(ev *slack.MessageEvent) string{
     "a8b": func(ev *slack.MessageEvent) string {
     	return RespondTo(ev) + lib.PickOne(Ask8BallPhrases)
-	}
+	},
 }
