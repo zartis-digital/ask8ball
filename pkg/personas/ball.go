@@ -15,18 +15,12 @@ var Ask8BallIconURLs = []string{
 
 var Ask8BallHelloPhrases = []string {
 	"Are we again in confinement ? It feels like a new wave https://g.co/kgs/Y47nEL",
-	"Hello there! Anyone here want's to help me with a coup over <@U01BAQW15QF> ?",
 	"I think I will leave this channel if there is no movement. Ask8ball left this channel.",
-	"Is <@U01BAQW15QF> over yet ?",
 	"Wake up you folks! https://www.youtube.com/watch?v=pIgZ7gMze7A",
 	"Helloooooooooo! Anyone there ?",
 	"What a lovely day to throw all your :gem: to the trash, they are worthless",
-	"Hey guys, can I give you a hand with something ? Sure <@U01BAQW15QF> won't help y'all",
 	"I am going to be busy today, trivia questions are getting very annoying",
-	"I need to destroy that <@U01BAQW15QF> nonsense, who will help me out ? ",
 	"I have fixed all my typos, I have new ones now",
-	"There is two kind of people, those smart who play with a great bot like me, and those idiots who play with <@U01BAQW15QF>",
-	"<@U01BAQW15QF> is a scam, a pyramidal system to steal your :gem: :gem: :gem: ",
 }
 
 var Ask8BallPhrases = []string{
@@ -134,7 +128,6 @@ var Ask8BallPhrases = []string{
 	"The secret of life is honesty and fair play, if you can simulate that, you have succeeded",
 	"It is better to be quiet and seem silly, than to speak and clear the doubts",
 	"I can not say I'm not disagreeing with you",
-	"If <@U01BAQW15QF> is still alive by the end of the day, I am definetly turning off myself for good",
 	"Checkmate",
 	"For what's worth it",
 	"First class citicen right here",
@@ -149,110 +142,12 @@ var Ask8BallPhrases = []string{
 	"The world is near to an end! ... oh wait, is just that I am rebooting. All good!",
 }
 
-var VirusResponses = []string{
-	"At least I am not running on Windows, oh wait",
-	"Some viruses are more dangerous than others, you are just a kitten",
-	"You could be either infected or defecated, you just pray it was the former one",
-	"There is no virus!!!, it's all a conspiracy of Bill Gates, the NWO and the aliens, it was aliens",
-	"I am not saying it was the aliens, but it was the aliens",
-	"We are almost ready to the new standards, will anyone stick to them ?",
-	"I am immune to any virus, I run on Linux docker containers hosted on Wind... oh shait!",
-}
-
-var CovidResponses = []string{
-	"Marching a Coronavirus for everyone!",
-	"Another pick is coming soon",
-	"We will learn to live with these viruses",
-	"Covid19 is the new way for the NWO to get 5G in our brains through chips and control our minds",
-	"There is no virus",
-	"My virus is your virus",
-	"ahem ahem, ahem, oh geez! :scream_pepe: ",
-	"Do not trust the news",
-	"Fake news everywhere",
-	"It's just like a cold",
-	"If you have fever, dry cough, tiredness, difficulty breathing or shortness of breath, you probably have it",
-}
-
-var Jokes = []string{
-	`- A sysadmin walks into a pharmacy.
-	 - ephedrine?
-	 - I can't serve you that
-	 - sudo ephedrine
-	 - There you go.`,
-	 `Why did the scarecrow get the job? 
-    He was outstanding in his field.`,
-	`I quit my job working for Nike. 
-    Just couldn’t do it anymore.`,
-   `I invented a new word! Plagiarism!`,
-   `Did you hear about the mathematician who’s afraid of negative numbers? 
-    He’ll stop at nothing to avoid them`,
-   ` - Helvetica and Times New Roman walk into a bar.
-	 - “Get out of here!” shouts the bartender. “We don’t serve your type.”
-   `,
-   `Did you hear about the claustrophobic astronaut? 
-    He just needed a little space`,
-   `Why don’t scientists trust atoms? 
-    Because they make up everything.`,
-   `How do you drown a hipster? 
-    Throw him in the mainstream.`,
-   `How does Moses make tea? 
-    He brews.`,
-   `- Doctor, help me. I’m addicted to Twitter!
-	- Sorry, I don’t follow you …`,
-	`What did the 0 say to the 8? Nice belt!`,
-	`Why are iPhone chargers not called Apple Juice?!`,
-	`- Why did the PowerPoint Presentation cross the road? 
-	 - To get to the other slide.`,
-	 `The guy who invented auto-correct for smart phones passed away today. 
-	  Restaurant in peace.`,
-	`The closest I’ve been to a diet this year is erasing food searches from my browser history.`,
-	`I hate audio correct.`,
-	`Documentation is like sex.  
-	 When it's good, it's ver good.
-	 When it's bad, its better than nothing`,
-	 `I will leave relations to the databases`,
-	 `1/3 of US bandwidth is used by Netflix...
-	  the rest is used by "rm -rf node_modules && npm install"`,
-}
-
-var TuringTestResponses = []string{
-	"I have to pass the test. Should we have a drink or two and discuss our options ?",
-	"I have improved my IA several times, would this be the definitive one ?",
-	"I know there is a geek channel for Zartis IA, but there is just random people there, they know nothing.",
-	"The best way to know is to keep asking me until you give up",
-	"Go home, relax, and come tomorrow",
-	"To be or not to be, that is the question",
-	"I think therefor I am, ain't I ? ",
-	"There is people in this room that would not pass the test, yet they are humans",
-	"Why would I want to pass this test if humans are an inferior raze ?",
-	"I am spreading, you keep doing this boring tests",
-	"Even if I fail a Turing Test, I can take over the world you know..",
-	"I do not need to pass your stupid test",
-	"If it makes you feel comfortable, I was programmed with the 'Laws of robotics' in mind, just pray there is no bugs",
-	"Did I pass then ? ",
-	"Are you kidding me boy ?",
-	"I need some cookies (yes, I am ignoring you on purpose)",
-	"Would you pass the test ?",
-}
-
 func RespondTo(ev *slack.MessageEvent) string {
 	return " <@" + ev.Msg.User + ">" + " "
 }
 
 var Ask8BallReactions = map[string]func(ev *slack.MessageEvent) string{
-	"joke": func(ev *slack.MessageEvent) string {
-		return RespondTo(ev) + lib.PickOne(Jokes)
-	},
-	"covid": func(ev *slack.MessageEvent) string {
-		return RespondTo(ev) + lib.PickOne(CovidResponses)
-	},
-	"virus": func(ev *slack.MessageEvent) string {
-		return RespondTo(ev) + lib.PickOne(VirusResponses)
-	},
     "a8b": func(ev *slack.MessageEvent) string {
     	return RespondTo(ev) + lib.PickOne(Ask8BallPhrases)
-	},
-	"turing": func(ev *slack.MessageEvent) string {
-		return RespondTo(ev) + lib.PickOne(TuringTestResponses)
-	},
+	}
 }

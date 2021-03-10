@@ -22,6 +22,14 @@ var (
 		Phrases:   personas.Ask8BallPhrases,
 		Reactions: personas.Ask8BallReactions,
 	}
+	uncleBobConfiguration = triggerbot.Configuration{
+	    Username: "Uncle Bob",
+	    Keywords:  personas.UncleBobKeywords,
+        IconURLs:  personas.UncleBobIconURLs,
+        HelloPhrases: personas.UncleBobHelloPhrases,
+        Phrases:   personas.UncleBobPhrases,
+        Reactions: personas.UncleBobReactions,
+	}
 )
 
 func main() {
