@@ -142,12 +142,12 @@ var Ask8BallPhrases = []string{
 	"The world is near to an end! ... oh wait, is just that I am rebooting. All good!",
 }
 
-func RespondTo(ev *slack.MessageEvent) string {
+func Ask8BallRespondTo(ev *slack.MessageEvent) string {
 	return " <@" + ev.Msg.User + ">" + " "
 }
 
 var Ask8BallReactions = map[string]func(ev *slack.MessageEvent) string{
     "a8b": func(ev *slack.MessageEvent) string {
-    	return RespondTo(ev) + lib.PickOne(Ask8BallPhrases)
+    	return Ask8BallRespondTo(ev) + lib.PickOne(Ask8BallPhrases)
 	},
 }

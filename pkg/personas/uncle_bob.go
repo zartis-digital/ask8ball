@@ -9,7 +9,7 @@ var UncleBobKeywords = []string{
 	"uncle",
 	"bob",
 	"martin",
-	"clean code"
+	"clean code",
 }
 
 var UncleBobIconURLs = []string{
@@ -35,14 +35,12 @@ var UncleBobHelloPhrases = []string {
 
 var UncleBobPhrases = []string{
     "Truth can only be found in one place: the code.",
-    "Indeed, the ratio of time spent reading versus writing is well over 10 to 1."
-    "We are constantly reading old code as part of the effort to write new code."
+    "Indeed, the ratio of time spent reading versus writing is well over 10 to 1.",
+    "We are constantly reading old code as part of the effort to write new code.",
     "Making it easy to read makes it easier to write.",
     "It is not enough for code to work.",
-    "Slaves are not allowed to say no. Laborers may be hesitant to say no. But
-     professionals are expected to say no. Indeed, good managers crave someone who
-     has the guts to say no. It’s the only way you can really get anything done.",
-     "So if you want to go fast, if you want to get done quickly, if you want your code to be easy to write, make it easy to read",
+    "Slaves are not allowed to say no. Laborers may be hesitant to say no. But professionals are expected to say no. Indeed, good managers crave someone who has the guts to say no. It’s the only way you can really get anything done.",
+         "So if you want to go fast, if you want to get done quickly, if you want your code to be easy to write, make it easy to read",
      "A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment.",
      "If you're good at the debugger it means you spent a lot of time debugging. I don't want you to be good at the debugger.",
      "You should name a variable using the same care with which you name a first-born child.",
@@ -83,15 +81,15 @@ var UncleBobPhrases = []string{
      "Code, without tests, is not clean. No matter how elegant it is, no matter how readable and accessible, if it hath not tests, it be unclean.",
 }
 
-func RespondTo(ev *slack.MessageEvent) string {
+func UncleBobRespondTo(ev *slack.MessageEvent) string {
 	return " <@" + ev.Msg.User + ">" + " "
 }
 
 var UncleBobReactions = map[string]func(ev *slack.MessageEvent) string{
     "bob": func(ev *slack.MessageEvent) string {
-        return RespondTo(ev) + lib.PickOne(Jokes)
+        return UncleBobRespondTo(ev) + lib.PickOne(UncleBobPhrases)
     },
     "uncle": func(ev *slack.MessageEvent) string {
-    	return RespondTo(ev) + lib.PickOne(UncleBobPhrases)
+    	return UncleBobRespondTo(ev) + lib.PickOne(UncleBobPhrases)
 	},
 }
